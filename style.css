@@ -54,7 +54,7 @@ textarea {
     border-radius: 2.5rem;
     border: var(--lilac) solid 0.25rem;
     padding: 0.75rem;
-    font-size: 9rem;
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     display: flex;
@@ -64,8 +64,8 @@ textarea {
     justify-content: center;
 }
 
-.counter-display > span {
-    font-size: 2rem;
+.big-num {
+    font-size: 9rem;
 }
 
 .counter-controls-wrapper {
@@ -76,7 +76,8 @@ textarea {
     align-items: center;
 }
 
-button {
+button,
+.button {
     background-color: var(--white);
     border-radius: 2.5rem;
     border-width: 0.25rem;

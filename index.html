@@ -28,7 +28,7 @@
                         Rows:
                     </h3>
                     <form action="send">
-                        <textarea name="rows" id="rows" cols="6" rows="1" type="number"></textarea>
+                        <textarea name="rows" id="rows" cols="5" rows="1" type="number"></textarea>
                     </form>
                 </div>
             </div>
@@ -44,10 +44,13 @@
             </div>
         </section>
         <section class="counter-wrapper">
-            <div class="counter-display">
-                2
-                <span class="of-rows">
-                    /5
+            <div class="counter-display" id="counter-display">
+                <span class="big-num" id="stitched">
+                    0
+                </span>
+                /
+                <span id="of-rows">
+                    0
                 </span>
             </div>
         </section>
@@ -69,6 +72,7 @@
                 </h3>
                 <form action="">
                     <textarea name="progress" id="progress" cols="36" rows="5" placeholder="Your notes here"></textarea>
+                    <input type="submit" value="Submit" class="button" id="btn-submit">
                 </form>
             </div>
         </section>
