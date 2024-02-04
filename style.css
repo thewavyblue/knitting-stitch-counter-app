@@ -1,0 +1,124 @@
+:root {
+    --lilac: #DBBBFB;
+    --red: #DF6565;
+    --green: #40D48D;
+    --blue: #8ABDE2;
+    --black: #000;
+    --grey: #808080;
+    --white: #fff;
+}
+
+html {
+    font-family: Roboto Mono, 'Courier New', Courier, monospace;
+}
+
+body {
+    max-width: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-data,
+.button-wrapper {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+textarea {
+    padding: 0.5rem;
+    border: var(--grey) solid 2px;
+}
+
+.input-current,
+.input-rows-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.counter-wrapper,
+.input-container,
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.counter-display {
+    background-color: var(--white);
+    border-radius: 2.5rem;
+    border: var(--lilac) solid 0.25rem;
+    padding: 0.75rem;
+    font-size: 9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-display > span {
+    font-size: 2rem;
+}
+
+.counter-controls-wrapper {
+    padding: 1.5rem 1rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: var(--white);
+    border-radius: 2.5rem;
+    border-width: 0.25rem;
+    border-style: solid;
+    padding: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* button:active {
+    background-color: ;
+} */
+
+.btn-round {
+    width: 5rem;
+    height: 5rem;
+}
+
+#btn-clear {
+    border-color: var(--red);
+}
+
+#btn-confirm {
+    border-color: var(--green);
+}
+
+#btn-subtract {
+    border-color: var(--red);
+}
+
+#btn-reset {
+    border-color: var(--black);
+    width: 3rem;
+    height: 3rem;
+}
+
+#btn-add {
+    border-color: var(--green);
+}

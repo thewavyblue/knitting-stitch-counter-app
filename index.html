@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knitting Stitch Counter App</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-grid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <section class="input-container">
+            <div class="input-data">
+                <div class="input-current">
+                    <h3>
+                        Current row:
+                    </h3>
+                    <form action="send">
+                        <textarea name="current-row" id="current-row" cols="26" rows="1" placeholder="Enter description of your current row"></textarea>
+                    </form>
+                </div>
+                <div class="input-rows-wrapper">
+                    <h3>
+                        Rows:
+                    </h3>
+                    <form action="send">
+                        <textarea name="rows" id="rows" cols="6" rows="1" type="number"></textarea>
+                    </form>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button id="btn-clear">
+                    Clear
+                <img src="/svg/icon-clear.svg" alt="Clear">
+                </button>
+                <button id="btn-confirm">
+                    Confirm
+                <img src="/svg/icon-confirm.svg" alt="Confirm">
+                </button>
+            </div>
+        </section>
+        <section class="counter-wrapper">
+            <div class="counter-display">
+                2
+                <span class="of-rows">
+                    /5
+                </span>
+            </div>
+        </section>
+        <section class="counter-controls-wrapper">
+            <button id="btn-subtract" class="btn-round">
+                <img src="/svg/icon-subtract.svg" alt="Subtract">
+            </button>
+            <button id="btn-reset" class="btn-round">
+                <img src="/svg/icon-reset.svg" alt="Reset">
+            </button>
+            <button id="btn-add" class="btn-round">
+                <img src="/svg/icon-add.svg" alt="Add">
+            </button>
+        </section>
+        <section class="progress-wrapper">
+            <div class="progress-display">
+                <h3>
+                    Progress:
+                </h3>
+                <form action="">
+                    <textarea name="progress" id="progress" cols="36" rows="5" placeholder="Your notes here"></textarea>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
