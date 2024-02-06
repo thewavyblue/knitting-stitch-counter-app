@@ -24,6 +24,7 @@ body {
     display: flex;
     gap: 1rem;
     width: 100%;
+    align-items: flex-end;
 }
 
 textarea {
@@ -91,6 +92,7 @@ button,
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    height: 3.5rem;
 }
 
 /* button:active {
@@ -104,10 +106,17 @@ button,
 
 #btn-clear {
     border-color: var(--red);
+    width: 4rem;
 }
 
 #btn-confirm {
     border-color: var(--green);
+}
+
+#btn-confirm:hover {
+    border-color: var(--green);
+    background-color: var(--green);
+    color: var(--white);
 }
 
 #btn-subtract {
@@ -122,4 +131,13 @@ button,
 
 #btn-add {
     border-color: var(--green);
+}
+
+#notes {
+    background-color: #e0e0e0;
+    height: 150px;
+    width: 100%;
+    color: var(--black);
+    padding: 1rem;
+    overflow: scroll;
 }

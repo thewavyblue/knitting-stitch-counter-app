@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnSubmit = document.getElementById('btn-submit');
 
     let count = 0;
-    let counterDisplay = document.getElementById('stitched')
+    let counterDisplay = document.getElementById('rows-knitted');
 
     btnAdd.addEventListener('click', function() {
-        count++;
-        counterDisplay.textContent = count;
+        // if (count === counterDisplay.value) {
+            count++;
+            counterDisplay.textContent = count;
+        // }        
     });
 
     btnReset.addEventListener('click', function() {
@@ -28,15 +30,39 @@ document.addEventListener('DOMContentLoaded', function() {
         counterDisplay.textContent = count;
     });
 
-    function submitForm(event){
-        //Preventing page refresh
-        event.preventDefault();
-    }
+
     
-    //Calling a function during form submission.
-    form.addEventListener('submit', submitForm);
+    let ofRows = document.getElementById('of-rows');
+    let notePad = document.getElementById('notes');
+    let rowsKnitted = counterDisplay.textContent.trim();
+    let notesArr = [];
+
+    btnConfirm.addEventListener('click', function() {
+        
+        let inputRows = document.getElementById('input-rows').value;
+        let currentRow = document.getElementById('current-row').value;
+        
+        rowsKnitted = 0;
+
+        if (!isNaN(inputRows)) {
+            ofRows.textContent = inputRows;
+            notePad.innerHTML += `${currentRow}, Rows: ${rowsKnitted}/${inputRows}<br>`;
+            } else {
+            console.log("no number");
+        }      
+    })
+
+    btnClear.addEventListener('click', function() {
+        ofRows.textContent = 0;    
+    });
+
+    btnSubmit.addEventListener('click', function() {
+        notePad.innerHTML += `${currentRow}, Rows: ${rowsKnitted}/${inputRows}<br>`;
+        count = 0;
+        counterDisplay.textContent = count;
+    });
 
 
 
-    localStorage.setItem("myCat", "Tom");
+    // localStorage.setItem("myCat", "Tom");
 })

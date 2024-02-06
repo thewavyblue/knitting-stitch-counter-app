@@ -19,33 +19,33 @@
                     <h3>
                         Current row:
                     </h3>
-                    <form action="send">
-                        <textarea name="current-row" id="current-row" cols="26" rows="1" placeholder="Enter description of your current row"></textarea>
-                    </form>
+                        <textarea name="current-row" id="current-row" cols="26" rows="1" placeholder="Enter description"></textarea>
                 </div>
                 <div class="input-rows-wrapper">
                     <h3>
                         Rows:
                     </h3>
-                    <form action="send">
-                        <textarea name="rows" id="rows" cols="5" rows="1" type="number"></textarea>
-                    </form>
+                    
+                    <textarea name="rows" id="input-rows" cols="5" rows="1" type="number"></textarea>
+                    
                 </div>
             </div>
             <div class="button-wrapper">
-                <button id="btn-clear">
-                    Clear
-                <img src="/svg/icon-clear.svg" alt="Clear">
-                </button>
-                <button id="btn-confirm">
-                    Confirm
-                <img src="/svg/icon-confirm.svg" alt="Confirm">
-                </button>
+                <!--Buttons-->
+                <div class="button-wrapper">
+                    <button id="btn-clear">
+                    <img src="/svg/icon-clear.svg" alt="Clear">
+                    </button>
+                    <button id="btn-confirm">
+                        Confirm
+                    <img src="/svg/icon-confirm.svg" alt="Confirm">
+                    </button>
+                </div>
             </div>
         </section>
         <section class="counter-wrapper">
             <div class="counter-display" id="counter-display">
-                <span class="big-num" id="stitched">
+                <span class="big-num" id="rows-knitted">
                     0
                 </span>
                 /
@@ -54,6 +54,7 @@
                 </span>
             </div>
         </section>
+        
         <section class="counter-controls-wrapper">
             <button id="btn-subtract" class="btn-round">
                 <img src="/svg/icon-subtract.svg" alt="Subtract">
@@ -66,6 +67,17 @@
             </button>
         </section>
         <section class="progress-wrapper">
+            <button id="btn-submit">
+                Post to board
+            </button>
+            <div id="notes">
+
+            </div>
+        </section>
+        
+        
+        
+        <!-- <section class="progress-wrapper">
             <div class="progress-display">
                 <h3>
                     Progress:
@@ -75,7 +87,9 @@
                     <input type="submit" value="Submit" class="button" id="btn-submit">
                 </form>
             </div>
-        </section>
+        </section> -->
+
+
     </div>
 </body>
 <script src="script.js"></script>
