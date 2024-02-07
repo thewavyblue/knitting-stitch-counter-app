@@ -12,6 +12,14 @@ html {
     font-family: Roboto Mono, 'Courier New', Courier, monospace;
 }
 
+p {
+    font-size: 1rem;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
 body {
     max-width: 420px;
     display: flex;
@@ -39,6 +47,10 @@ textarea {
     gap: 0.5rem;
 }
 
+.input-current {
+    flex-direction: row;
+}
+
 .counter-wrapper,
 .input-container,
 .progress-wrapper {
@@ -50,7 +62,8 @@ textarea {
     gap: 1rem;
 }
 
-.counter-display {
+.counter-display,
+#notes {
     background-color: var(--white);
     border-radius: 2.5rem;
     border: var(--lilac) solid 0.25rem;
@@ -70,7 +83,7 @@ textarea {
 }
 
 .counter-controls-wrapper {
-    padding: 1.5rem 1rem;
+    padding: 0 1rem;
     display: flex;
     gap: 4rem;
     justify-content: center;
@@ -109,8 +122,14 @@ button,
     width: 4rem;
 }
 
-#btn-confirm {
+#btn-confirm,
+#btn-submit {
     border-color: var(--green);
+}
+
+#btn-submit {
+    width: 4rem;
+    height: 4rem;
 }
 
 #btn-confirm:hover {
@@ -134,10 +153,11 @@ button,
 }
 
 #notes {
-    background-color: #e0e0e0;
-    height: 150px;
-    width: 100%;
+    height: 200px;
     color: var(--black);
     padding: 1rem;
     overflow: scroll;
+    font-size: 1rem;
+    align-items: start;
+    justify-content: left;
 }

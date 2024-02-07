@@ -15,22 +15,11 @@
     <div class="container">
         <section class="input-container">
             <div class="input-data">
-                <div class="input-current">
-                    <h3>
-                        Current row:
-                    </h3>
-                        <textarea name="current-row" id="current-row" cols="26" rows="1" placeholder="Enter description"></textarea>
-                </div>
                 <div class="input-rows-wrapper">
-                    <h3>
-                        Rows:
-                    </h3>
-                    
+                    <h3>Rows:</h3>
                     <textarea name="rows" id="input-rows" cols="5" rows="1" type="number"></textarea>
-                    
                 </div>
-            </div>
-            <div class="button-wrapper">
+                <div class="button-wrapper">
                 <!--Buttons-->
                 <div class="button-wrapper">
                     <button id="btn-clear">
@@ -42,6 +31,8 @@
                     </button>
                 </div>
             </div>
+            </div>
+            
         </section>
         <section class="counter-wrapper">
             <div class="counter-display" id="counter-display">
@@ -66,30 +57,16 @@
                 <img src="/svg/icon-add.svg" alt="Add">
             </button>
         </section>
+        
         <section class="progress-wrapper">
-            <button id="btn-submit">
-                Post to board
-            </button>
-            <div id="notes">
-
+            <div id="notes"></div>
+            <div class="input-current">
+                    <textarea name="note-description" id="note-description" cols="28" rows="2" placeholder="Enter description"></textarea>
+                    <button id="btn-submit">
+                        <img src="/svg/icon-arrow-post.svg" alt="Submit">
+                    </button>
             </div>
         </section>
-        
-        
-        
-        <!-- <section class="progress-wrapper">
-            <div class="progress-display">
-                <h3>
-                    Progress:
-                </h3>
-                <form action="">
-                    <textarea name="progress" id="progress" cols="36" rows="5" placeholder="Your notes here"></textarea>
-                    <input type="submit" value="Submit" class="button" id="btn-submit">
-                </form>
-            </div>
-        </section> -->
-
-
     </div>
 </body>
 <script src="script.js"></script>

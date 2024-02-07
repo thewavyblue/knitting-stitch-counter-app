@@ -34,19 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let ofRows = document.getElementById('of-rows');
     let notePad = document.getElementById('notes');
-    let rowsKnitted = counterDisplay.textContent.trim();
-    let notesArr = [];
+    // let rowsKnitted = counterDisplay.textContent.trim();
+    // let notesArr = [];
+    let noteDescription = document.getElementById('note-description');
 
     btnConfirm.addEventListener('click', function() {
-        
         let inputRows = document.getElementById('input-rows').value;
-        let currentRow = document.getElementById('current-row').value;
-        
-        rowsKnitted = 0;
-
         if (!isNaN(inputRows)) {
             ofRows.textContent = inputRows;
-            notePad.innerHTML += `${currentRow}, Rows: ${rowsKnitted}/${inputRows}<br>`;
             } else {
             console.log("no number");
         }      
@@ -57,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     btnSubmit.addEventListener('click', function() {
-        notePad.innerHTML += `${currentRow}, Rows: ${rowsKnitted}/${inputRows}<br>`;
+        notePad.innerHTML += `${noteDescription}`;
         count = 0;
         counterDisplay.textContent = count;
     });
