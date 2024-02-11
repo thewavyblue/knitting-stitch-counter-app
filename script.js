@@ -39,16 +39,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     btnSubmit.addEventListener('click', function() {
         myNotes.push(inputNote.value);
-        console.log(myNotes);
-        // Append each note to notePad using a for loop
-        notePad.innerHTML += `<li>${myNotes[myNotes.length - 1]}</li>`;
-        for (let i = 0; i < myNotes.length; i++) {
-            console.log(localStorage.setItem("myNotes", JSON.stringify(myNotes)));
-        }
-
-        inputNote.value = "";
+        inputNote.value = ""; 
+        localStorage.setItem("myNotes", JSON.stringify(myNotes));
+        renderNotes();        
     });
 
+    let localStorageItem = JSON.parse(localStorage.getItem("myNotes"));
+
+    if (localStorageItem) {
+        myNotes = localStorageItem;
+        renderNotes();
+    } 
+
+    function renderNotes() {
+        let noteItems = ""
+        for (let i = 0; i < myNotes.length; i++) {
+            noteItems += `
+                <li>
+                    ${myNotes[i]}
+                </li>
+            `
+        }
+        notePad.innerHTML = noteItems  
+    }
 
     btnConfirm.addEventListener('click', function() {
         let inputRows = document.getElementById('input-rows').value;
