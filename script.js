@@ -33,10 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     let ofRows = document.getElementById('of-rows');
-    let notePad = document.getElementById('notes');
-    // let rowsKnitted = counterDisplay.textContent.trim();
-    // let notesArr = [];
-    let noteDescription = document.getElementById('note-description');
+    let notePad = document.getElementById('note-pad-list');
+    let inputNote = document.getElementById('input-note');
+    let myNotes = [];
+
+    btnSubmit.addEventListener('click', function() {
+        myNotes.push(inputNote.value);
+        console.log(myNotes);
+        // Append each note to notePad using a for loop
+        notePad.innerHTML += `<li>${myNotes[myNotes.length - 1]}</li>`;
+        for (let i = 0; i < myNotes.length; i++) {
+            console.log(localStorage.setItem("myNotes", JSON.stringify(myNotes)));
+        }
+
+        inputNote.value = "";
+    });
+
 
     btnConfirm.addEventListener('click', function() {
         let inputRows = document.getElementById('input-rows').value;
@@ -51,11 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         ofRows.textContent = 0;    
     });
 
-    btnSubmit.addEventListener('click', function() {
-        notePad.innerHTML += `${noteDescription}`;
-        count = 0;
-        counterDisplay.textContent = count;
-    });
+
+
 
 
 

@@ -17,7 +17,7 @@
             <div class="input-data">
                 <div class="input-rows-wrapper">
                     <h3>Rows:</h3>
-                    <textarea name="rows" id="input-rows" cols="5" rows="1" type="number"></textarea>
+                    <input type="number" id="input-rows"></textarea>
                 </div>
                 <div class="button-wrapper">
                 <!--Buttons-->
@@ -26,7 +26,7 @@
                     <img src="/svg/icon-clear.svg" alt="Clear">
                     </button>
                     <button id="btn-confirm">
-                        Confirm
+                        Set
                     <img src="/svg/icon-confirm.svg" alt="Confirm">
                     </button>
                 </div>
@@ -59,12 +59,16 @@
         </section>
         
         <section class="progress-wrapper">
-            <div id="notes"></div>
+            <div id="note-pad">
+                <ul id="note-pad-list">
+
+                </ul>
+            </div>
             <div class="input-current">
-                    <textarea name="note-description" id="note-description" cols="28" rows="2" placeholder="Enter description"></textarea>
-                    <button id="btn-submit">
-                        <img src="/svg/icon-arrow-post.svg" alt="Submit">
-                    </button>
+                <input type="text" id="input-note">
+                <button id="btn-submit">
+                    <img src="/svg/icon-arrow-post.svg" alt="Submit">
+                </button>
             </div>
         </section>
     </div>

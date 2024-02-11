@@ -9,6 +9,7 @@
 }
 
 html {
+    /* background-color: #000000cc; */
     font-family: Roboto Mono, 'Courier New', Courier, monospace;
 }
 
@@ -44,7 +45,8 @@ textarea {
 .input-rows-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    width: 100%;
 }
 
 .input-current {
@@ -62,8 +64,7 @@ textarea {
     gap: 1rem;
 }
 
-.counter-display,
-#notes {
+.counter-display {
     background-color: var(--white);
     border-radius: 2.5rem;
     border: var(--lilac) solid 0.25rem;
@@ -144,20 +145,29 @@ button,
 
 #btn-reset {
     border-color: var(--black);
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
 }
 
 #btn-add {
     border-color: var(--green);
 }
 
-#notes {
+#note-pad {
     height: 200px;
     color: var(--black);
     padding: 1rem;
-    overflow: scroll;
+    overflow-y: auto;
     font-size: 1rem;
     align-items: start;
     justify-content: left;
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    width: 100%;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
+#input-note {
+    width: 100%;
 }
