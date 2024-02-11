@@ -85,20 +85,18 @@ textarea {
     background-color: var(--white);
     border-radius: 2.5rem;
     border: var(--lilac) solid 0.25rem;
-    /* padding: 0.75rem; */
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
 .big-num {
-    font-size: 9rem;
+    font-size: 6rem;
 }
 
 .counter-controls-wrapper {
@@ -186,8 +184,15 @@ button,
     width: 100%;
     text-wrap: wrap;
     overflow-wrap: break-word;
+    position: relative;
 }
 
 #input-note {
     width: 100%;
+}
+
+#btn-clear-notes {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
 }

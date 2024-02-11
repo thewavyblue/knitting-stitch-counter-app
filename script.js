@@ -6,20 +6,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnReset = document.getElementById('btn-reset');
     const btnAdd = document.getElementById('btn-add');
     const btnSubmit = document.getElementById('btn-submit');
+    const btnClearNotes = document.getElementById('btn-clear-notes');
 
-    let count = 0;
     let counterDisplay = document.getElementById('rows-knitted');
+    let count = null;
+    let savedCount = localStorage.getItem("rowCount");
+    let savedRows = localStorage.getItem("ofRowsCount");
+
+    let ofRows = document.getElementById('of-rows');
+    let notePad = document.getElementById('note-pad-list');
+    let inputNote = document.getElementById('input-note');
+    let myNotes = [];
+    let ofRowsCount = 0;
+
+    // Get the row count saved in the localStorage
+    if(savedCount) {
+        counterDisplay.textContent = savedCount;
+        count = savedCount;
+    } else {
+        counterDisplay.textContent = 0;
+        count = savedCount;
+    }
+
+    if(savedRows) {
+        ofRows.textContent = savedRows;
+        ofRowsCount = savedRows;
+    } else {
+        ofRows.textContent = 0;
+        ofRowsCount = 0;
+    }
 
     btnAdd.addEventListener('click', function() {
-        // if (count === counterDisplay.value) {
-            count++;
-            counterDisplay.textContent = count;
-        // }        
+        count++;
+        counterDisplay.textContent = count;
+        saveCount();    
     });
 
     btnReset.addEventListener('click', function() {
         count = 0;
         counterDisplay.textContent = count;
+        saveCount();
     });
 
     btnSubtract.addEventListener('click', function() {
@@ -28,14 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         count--;
         counterDisplay.textContent = count;
+        saveCount();
     });
 
+    function saveCount() {
+        localStorage.setItem("rowCount", count);
+        localStorage.setItem("ofRowsCount", ofRowsCount);
+    }
 
-    
-    let ofRows = document.getElementById('of-rows');
-    let notePad = document.getElementById('note-pad-list');
-    let inputNote = document.getElementById('input-note');
-    let myNotes = [];
+    btnConfirm.addEventListener('click', function() {
+        let inputRows = document.getElementById('input-rows').value;
+        if (!isNaN(inputRows)) {
+            ofRows.textContent = inputRows;
+            } else {
+            console.log("no number");
+        }      
+    })
+
+    btnClear.addEventListener('click', function() {
+        ofRows.textContent = 0;    
+    });
 
     btnSubmit.addEventListener('click', function() {
         myNotes.push(inputNote.value);
@@ -63,18 +101,16 @@ document.addEventListener('DOMContentLoaded', function() {
         notePad.innerHTML = noteItems  
     }
 
-    btnConfirm.addEventListener('click', function() {
-        let inputRows = document.getElementById('input-rows').value;
-        if (!isNaN(inputRows)) {
-            ofRows.textContent = inputRows;
-            } else {
-            console.log("no number");
-        }      
+    btnClearNotes.addEventListener('click', function() {
+        clearNotePad();
     })
 
-    btnClear.addEventListener('click', function() {
-        ofRows.textContent = 0;    
-    });
+    function clearNotePad() {
+        localStorage.clear();
+        notePad.innerHTML = "";
+    }
+
+
 
 
 
