@@ -13,6 +13,9 @@
 </head>
 <body>
     <div class="container">
+        <header>
+            <img src="/svg/stitchkeeper-logo.svg" alt="StitchKeeper">
+        </header>
         <section class="input-container">
             <div class="input-data">
                 <div class="input-rows-wrapper">
@@ -22,7 +25,7 @@
                 <div class="button-wrapper">
                 <!--Buttons-->
                 <div class="button-wrapper">
-                    <button id="btn-confirm">
+                    <button id="btn-set">
                         Set
                     <img src="/svg/icon-confirm.svg" alt="Confirm">
                     </button>
@@ -41,7 +44,7 @@
                     0
                 </span>
             </div>
-            <button id="btn-clear">Clear rows</button>
+            <button id="btn-clear">Clear 'of X rows'</button>
         </section>
         
         <section class="counter-controls-wrapper">
@@ -64,13 +67,16 @@
                 </ul>
             </div>
             <div class="input-current">
-                <textarea type="text" id="input-note"></textarea>
+                <textarea type="text" id="input-note" placeholder="Add description"></textarea>
                 <button id="btn-submit">
                     <img src="/svg/icon-arrow-post.svg" alt="Submit">
                 </button>
             </div>
         </section>
     </div>
+    <footer>
+        <p>© 2024 – v1.2 An app by <a href="https://www.benhoath.com">Ben Hoath</a></p>
+    </footer>
 </body>
 <script src="script.js"></script>
 </html>

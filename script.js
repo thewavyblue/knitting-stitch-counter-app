@@ -1,80 +1,105 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const btnClear = document.getElementById('btn-clear');
-    const btnConfirm = document.getElementById('btn-confirm');
+    const btnSet = document.getElementById('btn-set');
     const btnSubtract = document.getElementById('btn-subtract');
     const btnReset = document.getElementById('btn-reset');
     const btnAdd = document.getElementById('btn-add');
     const btnSubmit = document.getElementById('btn-submit');
     const btnClearNotes = document.getElementById('btn-clear-notes');
 
-    let counterDisplay = document.getElementById('rows-knitted');
-    let count = null;
-    let savedCount = localStorage.getItem("rowCount");
-    let savedRows = localStorage.getItem("ofRowsCount");
+    // Get elements related to the 'rows knitted' display
+    let rowsKnittedDisplay = document.getElementById('rows-knitted');
+    let rowsKnittedCount = 0;
+    let savedRowsKnittedCount = localStorage.getItem("rowsKnittedCount");
 
-    let ofRows = document.getElementById('of-rows');
+    // Get elements related to the 'of X rows' display
+
+    let ofXRowsDisplay = document.getElementById('of-rows');
+    let ofXRowsCount = 0;
+    let savedOfXRowsCount = localStorage.getItem("ofXRowsCount");
+
+    // Notepad related variables
     let notePad = document.getElementById('note-pad-list');
     let inputNote = document.getElementById('input-note');
     let myNotes = [];
-    let ofRowsCount = 0;
 
-    // Get the row count saved in the localStorage
-    if(savedCount) {
-        counterDisplay.textContent = savedCount;
-        count = savedCount;
+    // Get the 'rows knitted' count saved in the localStorage
+    if(savedRowsKnittedCount) {
+        rowsKnittedDisplay.textContent = savedRowsKnittedCount;
+        rowsKnittedCount = savedRowsKnittedCount;
     } else {
-        counterDisplay.textContent = 0;
-        count = savedCount;
+        rowsKnittedDisplay.textContent = 0;
+        rowsKnittedCount = savedRowsKnittedCount;
     }
 
-    if(savedRows) {
-        ofRows.textContent = savedRows;
-        ofRowsCount = savedRows;
+    // Get the 'of X rows' value saved in localStorage
+    if(savedOfXRowsCount) {
+        ofXRowsDisplay.textContent = savedOfXRowsCount;
+        ofXRowsCount = savedOfXRowsCount;
+        console.log(`savedOfXRowsCount accessed: ${savedOfXRowsCount}`);
     } else {
-        ofRows.textContent = 0;
-        ofRowsCount = 0;
+        ofXRowsDisplay.textContent = 0;
+        ofXRowsCount = 0;
+        console.log(`savedOfXRowsCount not accessed`);
+    }
+    
+    // Function to save count to localStorage
+    function saveCount() {
+        localStorage.setItem("rowsKnittedCount", rowsKnittedCount);
+        localStorage.setItem("ofXRowsCount", ofXRowsCount);
     }
 
+    // Button to set the 'of X rows' value
+    btnSet.addEventListener('click', function() {
+        // This is the input for the number of rows required to knit.
+        let inputRows = document.getElementById('input-rows').value;
+        
+        if (inputRows) {
+            ofXRowsDisplay.textContent = inputRows;
+            ofXRowsCount = inputRows;
+            console.log("Set button clicked");
+            } else {
+            console.log("no number");
+        }
+        saveCount();
+    })
+
+    // Button to clear the 'of X rows' value 
+    btnClear.addEventListener('click', function() {
+        ofXRowsDisplay.textContent = 0;    
+    });
+
+    // Buttons to increment and decrement the row count value
     btnAdd.addEventListener('click', function() {
-        count++;
-        counterDisplay.textContent = count;
+        rowsKnittedCount++;
+        rowsKnittedDisplay.textContent = rowsKnittedCount;
         saveCount();    
     });
 
-    btnReset.addEventListener('click', function() {
-        count = 0;
-        counterDisplay.textContent = count;
-        saveCount();
-    });
-
     btnSubtract.addEventListener('click', function() {
-        if (count < 1) {
-            count = 1;
+        if (rowsKnittedCount < 1) {
+            rowsKnittedCount = 1;
         }
-        count--;
-        counterDisplay.textContent = count;
+        rowsKnittedCount--;
+        rowsKnittedDisplay.textContent = rowsKnittedCount;
         saveCount();
     });
 
-    function saveCount() {
-        localStorage.setItem("rowCount", count);
-        localStorage.setItem("ofRowsCount", ofRowsCount);
-    }
-
-    btnConfirm.addEventListener('click', function() {
-        let inputRows = document.getElementById('input-rows').value;
-        if (!isNaN(inputRows)) {
-            ofRows.textContent = inputRows;
-            } else {
-            console.log("no number");
-        }      
-    })
-
-    btnClear.addEventListener('click', function() {
-        ofRows.textContent = 0;    
+    // Button to reset the 'rows knitted' value 
+    btnReset.addEventListener('click', function() {
+        rowsKnittedCount = 0;
+        rowsKnittedDisplay.textContent = rowsKnittedCount;
+        ofXRowsDisplay.textContent = rowsKnittedCount;
+        ofXRowsCount = 0;
+        saveCount();
     });
 
+
+
+    // Notepad functionality
+
+    // Button to submit a new note
     btnSubmit.addEventListener('click', function() {
         myNotes.push(inputNote.value);
         inputNote.value = ""; 
@@ -109,13 +134,4 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.clear();
         notePad.innerHTML = "";
     }
-
-
-
-
-
-
-
-
-    // localStorage.setItem("myCat", "Tom");
 })

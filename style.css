@@ -15,24 +15,31 @@ html {
 
 p {
     font-size: 1rem;
+    text-align: center;
 }
 
 h3 {
     text-transform: uppercase;
 }
 
+header,
+footer {
+    padding: 1rem 1.5rem;
+}
+
+header > img {
+    margin: auto;
+}
+
 body {
     max-width: 420px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1rem;
+    margin: 1rem auto;
 }
 
 .input-data,
@@ -58,8 +65,9 @@ textarea {
 }
 
 #input-rows {
-    width: 4rem;
+    width: 3rem;
     height: 2.5rem;
+    text-align: center;
 }
 
 .input-current {
@@ -102,8 +110,7 @@ textarea {
 .counter-controls-wrapper {
     padding: 0 1rem;
     display: flex;
-    gap: 4rem;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -141,7 +148,7 @@ button,
     border-radius: 0 0 2.25rem 2.25rem;
 }
 
-#btn-confirm,
+#btn-set,
 #btn-submit {
     border-color: var(--green);
 }
