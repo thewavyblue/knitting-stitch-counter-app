@@ -11,6 +11,7 @@
 html {
     /* background-color: #000000cc; */
     font-family: Roboto Mono, 'Courier New', Courier, monospace;
+    user-select: none;
 }
 
 p {
