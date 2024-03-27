@@ -1,0 +1,1 @@
+My wife likes to knit, but doesn't like to drop a stitch. She needs a tool to help her keep track of her progress during a knitting session and when she returns after time away. I aim to build a simple web app utilising the device's local storage to save her progress.
